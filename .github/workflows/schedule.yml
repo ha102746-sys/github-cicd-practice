@@ -1,0 +1,9 @@
+name: Schedule
+on:
+  schedule:
+    - cron: '*/30 * * * *' # 毎30分に実行
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: date # 現在時刻の表示
