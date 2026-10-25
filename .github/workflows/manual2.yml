@@ -1,0 +1,17 @@
+name: Manual2
+on:
+  workflow_dispatch:                 # 手動トリガーの定義
+    inputs:                          # 入力パラメータの定義
+      log-level:                     # パラメータ名
+        type: choice                 # パラメータの型(文字列)
+        options:                     # 選択肢
+          - DEBUG
+          - INFO
+          - WARNING
+          - ERROR
+        description: choice word     # 説明
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ inputs.log-level }}" # 入力パラメータ「log-level」の使用
